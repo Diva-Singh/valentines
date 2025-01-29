@@ -22,8 +22,8 @@
             position: absolute;
         }
         .bear-img {
-            width: auto;
-            height: auto;
+            width: 300px;
+            height: 300px;
         }
         .hidden {
             display: none;
@@ -48,7 +48,7 @@
 </head>
 <body>
     <div id="popup" class="popup">
-        <img id="bear-img" class="bear-img" src="C:\HP\Downloads\dancey.gif" alt="Cute Bear">
+        <img id="bear-img" class="bear-img" src="dancey.gif" alt="Cute Bear">
         <h2 id="question">Will you be my Valentine? 💖</h2>
         <button onclick="acceptLove()">Yes</button>
         <button onclick="rejectLove()">No</button>
@@ -57,17 +57,17 @@
     <script>
         function acceptLove() {
             document.getElementById('question').innerText = "Yay! 🎉";
-            document.getElementById('bear-img').src = "C:\HP\Downloads\lovey.gif"; 
+            document.getElementById('bear-img').src = "lovey.gif"; 
             document.getElementById('bear-img').classList.add("happy-bear");
         }
 
         function rejectLove() {
             document.getElementById('question').innerText = "Invalid input! 😡";
-            document.getElementById('bear-img').src = "C:\HP\Downloads\angy.gif";
+            document.getElementById('bear-img').src = "angy.gif";
             document.getElementById('bear-img').classList.add("angry-bear");
             setTimeout(() => {
                 document.getElementById('question').innerText = "Will you be my Valentine? 💖";
-                document.getElementById('bear-img').src = "C:\HP\Downloads\dancey.gif";
+                document.getElementById('bear-img').src = "dancey.gif";
                 document.getElementById('bear-img').classList.remove("angry-bear");
             }, 1500);
         }
