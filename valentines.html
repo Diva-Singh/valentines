@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe4e1;
+            font-family: 'Comic Sans MS', cursive;
+        }
+        .popup {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            position: absolute;
+        }
+        .bear-img {
+            width: auto;
+            height: auto;
+        }
+        .hidden {
+            display: none;
+        }
+        .angry-bear {
+            animation: shake 0.5s ease-in-out infinite;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+        }
+        .happy-bear {
+            animation: dance 1s infinite;
+        }
+        @keyframes dance {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div id="popup" class="popup">
+        <img id="bear-img" class="bear-img" src="C:\HP\Downloads\dancey.gif" alt="Cute Bear">
+        <h2 id="question">Will you be my Valentine? 💖</h2>
+        <button onclick="acceptLove()">Yes</button>
+        <button onclick="rejectLove()">No</button>
+    </div>
+
+    <script>
+        function acceptLove() {
+            document.getElementById('question').innerText = "Yay! 🎉";
+            document.getElementById('bear-img').src = "C:\HP\Downloads\lovey.gif"; 
+            document.getElementById('bear-img').classList.add("happy-bear");
+        }
+
+        function rejectLove() {
+            document.getElementById('question').innerText = "Invalid input! 😡";
+            document.getElementById('bear-img').src = "C:\HP\Downloads\angy.gif";
+            document.getElementById('bear-img').classList.add("angry-bear");
+            setTimeout(() => {
+                document.getElementById('question').innerText = "Will you be my Valentine? 💖";
+                document.getElementById('bear-img').src = "C:\HP\Downloads\dancey.gif";
+                document.getElementById('bear-img').classList.remove("angry-bear");
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
